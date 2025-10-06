@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Srujana Srinivasan</title>
+  <meta name="description" content="Srujana Srinivasan — portfolio, resume, projects, and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-logo" aria-hidden="true">SS</span>
+        <span class="brand-text">Srujana Srinivasan</span>
+      </a>
+      <nav aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+        <ul id="primary-menu" class="nav-list">
+          <li><a href="index.html" >Home</a></li>
+<li><a href="about.html" >About Me</a></li>
+<li><a href="resume.html" >Resume</a></li>
+<li><a href="projects.html" aria-current="page" class="active">Projects</a></li>
+<li><a href="contact.html" >Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    
+<section class="prose">
+  <div class="section-title">
+    <img src="images/sparkle.svg" alt="" aria-hidden="true">
+    <h1>Projects ✨</h1>
+  </div>
+  <p>Four projects I’m proud of — blending research, AI/ML, and product thinking with a soft, human touch.</p>
+</section>
+
+<section class="grid-2">
+
+  <article class="project">
+    <div class="icon"><img src="images/icon_music.svg" alt="Music icon"></div>
+    <div class="project-body">
+      <h2>Dual Approach to Melakarta Raga Classification</h2>
+      <p class="meta">Sep 2024 – Mar 2025 · SSN College of Engineering</p>
+      <p>Documented a database of 72 Melakarta ragas; extracted FFT spectrograms and compared spectral feature extraction vs neural networks to enhance raga recognition &amp; musicological research.</p>
+      <div class="badges">
+        <span class="badge">Python</span><span class="badge">Machine Learning</span><span class="badge">Audio/FFT</span><span class="badge">Research</span>
+      </div>
+      <p class="project-links"><a class="btn btn-secondary" href="#" aria-label="Case study placeholder">View Details</a></p>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="icon"><img src="images/icon_stethoscope.svg" alt="Stethoscope icon"></div>
+    <div class="project-body">
+      <h2>AI-Powered Medical Document Verification</h2>
+      <p class="meta">Jun 2024 – Nov 2024 · DataTerrain</p>
+      <p>Built ML to vectorize medical documents for accurate preliminary diagnosis retrieval; matched universal medical codes with hospital claim codes to improve transparency and reduce admin errors.</p>
+      <div class="badges">
+        <span class="badge">Python</span><span class="badge">Flask</span><span class="badge">HTML</span><span class="badge">Healthcare</span>
+      </div>
+      <p class="project-links"><a class="btn btn-secondary" href="#" aria-label="Repo placeholder">Repository</a></p>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="icon"><img src="images/icon_dumbbell.svg" alt="Dumbbell icon"></div>
+    <div class="project-body">
+      <h2>FitTrack — Smart Personal Fitness Tracker</h2>
+      <p class="meta">May 2024 – Sep 2024 · SSN College of Engineering</p>
+      <p>Developed a fitness app with Google Fit API: discover workouts by muscle group; integrated health metrics, form-correction flashcards, activity journal, calorie tracker, and downloadable progress reports.</p>
+      <div class="badges">
+        <span class="badge">Python</span><span class="badge">HTML/CSS</span><span class="badge">APIs</span><span class="badge">Analytics</span>
+      </div>
+      <p class="project-links"><a class="btn btn-secondary" href="#" aria-label="Case study placeholder">View Details</a></p>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="icon"><img src="images/icon_book.svg" alt="Book icon"></div>
+    <div class="project-body">
+      <h2>AI Tutor — Adaptive EdTech Platform</h2>
+      <p class="meta">Sep 2023 – Mar 2024 · SSN College of Engineering</p>
+      <p>Built an EdTech platform for neurodiverse learners with adaptive quizzes, style-based recommendations, content summarization, and a dynamic scheduler—improving engagement and personalization.</p>
+      <div class="badges">
+        <span class="badge">Research</span><span class="badge">Data Analysis</span><span class="badge">Python</span><span class="badge">Figma</span>
+      </div>
+      <p class="project-links"><a class="btn btn-secondary" href="#" aria-label="Case study placeholder">View Details</a></p>
+    </div>
+  </article>
+
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Srujana Srinivasan · Built with love ✨ · she/her · <a href="mailto:srusrini@iu.edu">srusrini@iu.edu</a></p>
+      <p><a href="https://www.linkedin.com/in/srujana-srinivasan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="index.html#repo">GitHub repo link (add later)</a></p>
+    </div>
+  </footer>
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('primary-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

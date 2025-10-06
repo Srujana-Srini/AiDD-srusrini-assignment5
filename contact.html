@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Srujana Srinivasan</title>
+  <meta name="description" content="Srujana Srinivasan — portfolio, resume, projects, and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-logo" aria-hidden="true">SS</span>
+        <span class="brand-text">Srujana Srinivasan</span>
+      </a>
+      <nav aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+        <ul id="primary-menu" class="nav-list">
+          <li><a href="index.html" >Home</a></li>
+<li><a href="about.html" >About Me</a></li>
+<li><a href="resume.html" >Resume</a></li>
+<li><a href="projects.html" >Projects</a></li>
+<li><a href="contact.html" aria-current="page" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    
+<section class="prose">
+  <div class="section-title">
+    <img src="images/sparkle.svg" alt="" aria-hidden="true">
+    <h1>Contact 💌</h1>
+  </div>
+  <p>Email me at <a href="mailto:srusrini@iu.edu">srusrini@iu.edu</a> · Connect on <a href="https://www.linkedin.com/in/srujana-srinivasan/" target="_blank" rel="noopener">LinkedIn</a></p>
+
+  <h2>Send a message</h2>
+  <form id="contactForm" novalidate>
+    <div class="form-row">
+      <label for="firstName">First Name</label>
+      <input id="firstName" name="firstName" type="text" required aria-describedby="firstNameHelp">
+      <small id="firstNameHelp" class="hint">Required.</small>
+      <span class="error" id="firstNameError" aria-live="polite"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" name="lastName" type="text" required aria-describedby="lastNameHelp">
+      <small id="lastNameHelp" class="hint">Required.</small>
+      <span class="error" id="lastNameError" aria-live="polite"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" required aria-describedby="emailHelp">
+      <small id="emailHelp" class="hint">Must be a valid email.</small>
+      <span class="error" id="emailError" aria-live="polite"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" minlength="8" required aria-describedby="passwordHelp">
+      <small id="passwordHelp" class="hint">At least 8 characters.</small>
+      <span class="error" id="passwordError" aria-live="polite"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required aria-describedby="confirmPasswordHelp">
+      <small id="confirmPasswordHelp" class="hint">Must match the password.</small>
+      <span class="error" id="confirmPasswordError" aria-live="polite"></span>
+    </div>
+
+    <button class="btn" type="submit">Send 💖</button>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const fields = ['firstName','lastName','email','password','confirmPassword'];
+
+  function setError(id, msg) {
+    const el = document.getElementById(id + 'Error');
+    if (el) el.textContent = msg || '';
+  }
+  function clearErrors() { fields.forEach(f => setError(f, '')); }
+
+  form.addEventListener('submit', (e) => {
+    clearErrors();
+    let valid = true;
+
+    const first = document.getElementById('firstName');
+    const last = document.getElementById('lastName');
+    const email = document.getElementById('email');
+    const pass = document.getElementById('password');
+    const conf = document.getElementById('confirmPassword');
+
+    if (!first.value.trim()) { setError('firstName', 'Please add your first name 💕'); valid = false; }
+    if (!last.value.trim()) { setError('lastName', 'Last name is needed ✨'); valid = false; }
+    if (!email.validity.valid) { setError('email', 'A valid email, pretty please ✉️'); valid = false; }
+    if (!pass.value || pass.value.length < 8) { setError('password', '8+ characters for security 💌'); valid = false; }
+    if (conf.value !== pass.value) { setError('confirmPassword', 'Passwords need to match 💗'); valid = false; }
+
+    if (!valid) { e.preventDefault(); return; }
+    e.preventDefault();
+    window.location.href = 'thankyou.html';
+  });
+</script>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Srujana Srinivasan · Built with love ✨ · she/her · <a href="mailto:srusrini@iu.edu">srusrini@iu.edu</a></p>
+      <p><a href="https://www.linkedin.com/in/srujana-srinivasan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="index.html#repo">GitHub repo link (add later)</a></p>
+    </div>
+  </footer>
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('primary-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
